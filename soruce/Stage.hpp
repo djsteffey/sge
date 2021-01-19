@@ -14,6 +14,7 @@ namespace sge {
 		virtual ~Stage();
 		virtual void draw(sf::RenderWindow* rw);
 		virtual void update(float delta);
+        virtual unsigned long addActor(std::unique_ptr<Actor>> actor);
 
 	protected:
 		sf::View m_view;
