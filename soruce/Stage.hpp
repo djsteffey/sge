@@ -11,10 +11,10 @@ namespace sge {
 	class Stage {
 	public:
 		Stage(sf::View view);
-		virtual ~Stage();
-		virtual void draw(sf::RenderWindow* rw);
-		virtual void update(float delta);
-        virtual unsigned long addActor(std::unique_ptr<Actor>> actor);
+		~Stage();
+		void draw(sf::RenderWindow* rw);
+		void update(float delta);
+        unsigned long addActor(std::unique_ptr<Actor> actor);
 
 	protected:
 		sf::View m_view;

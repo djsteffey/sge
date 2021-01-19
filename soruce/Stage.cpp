@@ -1,5 +1,6 @@
 #include "Stage.hpp"
 #include "Actor.hpp"
+#include "util.hpp"
 
 namespace sge {
 	Stage::Stage(sf::View view) {
@@ -22,4 +23,10 @@ namespace sge {
 			kvp.second->update(delta);
 		}
 	}
+
+    unsigned long Stage::addActor(std::unique_ptr<Actor> actor){
+        unsigned long id = util::generateUniqueId();
+        this->m_actors[id] = std::move(actor);
+        return id;
+    }
 }
