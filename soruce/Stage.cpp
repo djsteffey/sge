@@ -12,10 +12,12 @@ namespace sge {
 	}
 
 	void Stage::draw(sf::RenderWindow* rw) {
+		rw->clear();
 		rw->setView(this->m_view);
 		for (auto& kvp : this->m_actors){
 			kvp.second->draw(rw);
 		}
+		rw->display();
 	}
 
 	void Stage::update(float delta) {

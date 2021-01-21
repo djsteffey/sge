@@ -1,4 +1,6 @@
-#include <SFML/Graphics.hpp>
+#include <memory>
+#include "Screen.hpp"
+#include "Game.hpp"
 
 #ifdef _DEBUG
 #pragma comment(lib, "sfml-system-d.lib")
@@ -11,21 +13,10 @@
 #endif
 
 int main(int argc, char** argv) {
-	sf::RenderWindow rw;
-	rw.create(sf::VideoMode(720 / 2, 1280 / 2), "SGE", sf::Style::Close | sf::Style::Titlebar);
-	while (rw.isOpen()) {
-		sf::Event event;
-		while (rw.pollEvent(event)) {
-			if (event.type == sf::Event::Closed) {
-				rw.close();
-			}
-			else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
-				rw.close();
-			}
-		}
+	// build first screen
+	std::unique_ptr<sge::Screen> first_screen = std::make_unique<sge::Screen>(sf::View(sf::FloatRect(0.0f, 0.0f, 720.0f, 1280.0f)));
 
-		rw.clear();
-
-		rw.display();
-	}
+	// run the game
+	sge::Game game;
+	game.run(720 / 2, 1280 / 2, std::move(first_screen));
 }

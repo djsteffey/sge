@@ -24,12 +24,16 @@
     <ClCompile Include="..\soruce\main.cpp" />
     <ClCompile Include="..\soruce\Screen.cpp" />
     <ClCompile Include="..\soruce\Stage.cpp" />
+    <ClCompile Include="..\soruce\ui\UiWidget.cpp" />
+    <ClCompile Include="..\soruce\util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\soruce\Actor.hpp" />
     <ClInclude Include="..\soruce\Game.hpp" />
     <ClInclude Include="..\soruce\Screen.hpp" />
     <ClInclude Include="..\soruce\Stage.hpp" />
+    <ClInclude Include="..\soruce\ui\UiWidget.hpp" />
+    <ClInclude Include="..\soruce\util.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

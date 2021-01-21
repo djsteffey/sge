@@ -14,7 +14,7 @@ namespace sge{
 
     }
 
-    void Game::run(){
+    void Game::run(unsigned int width, unsigned int height, std::unique_ptr<Screen> first_screen){
         // check if already running
         if (this->m_is_running){
             return;
@@ -24,7 +24,10 @@ namespace sge{
         this->m_is_running = true;
 
         // initialize
-        this->init();
+        this->init(width, height);
+
+        // first screen
+        this->setNextScreen(std::move(first_screen));
 
         // run
         while(this->m_is_running){
@@ -41,8 +44,8 @@ namespace sge{
         this->m_next_screen = std::move(screen);
     }
 
-    void Game::init(){
-        this->m_render_window.create(sf::VideoMode(720 / 2, 1280 / 2), "SGE", sf::Style::Close | sf::Style::Titlebar);
+    void Game::init(unsigned int width, unsigned int height){
+        this->m_render_window.create(sf::VideoMode(width, height), "SGE", sf::Style::Close | sf::Style::Titlebar);
     }
 
     void Game::shutdown(){

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="header">
-      <UniqueIdentifier>{1825a3ec-837c-4c83-bffa-97391f393ad7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="source">
       <UniqueIdentifier>{1cde073e-ab84-486b-949a-23567dd79699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ui">
+      <UniqueIdentifier>{497ff5c6-b22f-413f-964b-21d4c47ce553}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,6 +24,12 @@
     <ClCompile Include="..\soruce\Stage.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="..\soruce\util.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\soruce\ui\UiWidget.cpp">
+      <Filter>source\ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\soruce\Actor.hpp">
@@ -37,6 +43,12 @@
     </ClInclude>
     <ClInclude Include="..\soruce\Stage.hpp">
       <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\soruce\util.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\soruce\ui\UiWidget.hpp">
+      <Filter>source\ui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

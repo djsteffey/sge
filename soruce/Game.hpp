@@ -12,13 +12,13 @@ namespace sge{
         public:
             Game();
             ~Game();
-            void run();
+            void run(unsigned int width, unsigned int height, std::unique_ptr<Screen> first_screen);
             void setNextScreen(std::unique_ptr<Screen> screen);
 
         protected:
 
         private:
-            void init();
+            void init(unsigned int width, unsigned int height);
             void shutdown();
             void events();
             void draw();
